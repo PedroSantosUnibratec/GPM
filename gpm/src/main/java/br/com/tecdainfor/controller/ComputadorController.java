@@ -49,7 +49,7 @@ public class ComputadorController {
 	
 	//Recebimento e tratamento dos dados via HTTP.
 	
-	@RequestMapping(value = "/lista", method= RequestMethod.GET)
+	@RequestMapping(value = "/listar", method= RequestMethod.GET)
 	public @ResponseBody List<Computador> ConsultarTodos(){
 		return 	this.computadordao.listarComputadores();
 	}
