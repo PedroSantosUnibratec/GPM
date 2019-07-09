@@ -88,8 +88,8 @@
 								<div class="col-md-4">
 									<h2>Contato</h2>
 									<p>
-										Email: junioribeiro-2009@hotmail.com <br></br> Fone: (081)
-										99542-6355 <br></br> Técnico Responsábel: Misael Júnior e Leomir Oliveira<br></br>
+										Email: leomiroliveira5@hotmail.com <br></br> Fone: (081)
+										997491889 <br></br> Técnico Responsábel:Leomir Oliveira<br></br>
 										Empresa: TecDaInfor
 									</p>
 								</div>

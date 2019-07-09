@@ -19,8 +19,7 @@ public class Setor {
 	private int id;
 	@Column(name = "nome_setor", nullable = false)
 	private String nome_setor;
-	@Column(name = "responsavel_setor", nullable = false)
-	private Usuario responsavel_setor;
+	
 	
 	
 	
@@ -38,13 +37,7 @@ public class Setor {
 	public void setNome_setor(String nome_setor) {
 		this.nome_setor = nome_setor;
 	}
-	public Usuario getResponsavel_setor() {
-		return responsavel_setor;
-	}
-	public void setResponsavel_setor(Usuario responsavel_setor) {
-		this.responsavel_setor = responsavel_setor;
-	}
-	
-	
 
 }
+
+

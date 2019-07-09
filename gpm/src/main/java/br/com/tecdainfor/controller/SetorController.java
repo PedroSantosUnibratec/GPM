@@ -23,7 +23,7 @@ public class SetorController {
 	
 	//Mapeamento das telas
 	
-	@RequestMapping(value = "/listar", method = RequestMethod.GET)
+	@RequestMapping(value = "/lista", method = RequestMethod.GET)
 	public ModelAndView listar() {
 
 		return new ModelAndView("setor/listar-setores");

@@ -9,6 +9,9 @@
       <provider>org.hibernate.ejb.HibernatePersistence</provider>
       <class>br.com.tecdainfor.model.Usuario</class>
        <class>br.com.tecdainfor.model.Monitor</class>
+        <class>br.com.tecdainfor.model.Impressora</class>
+         <class>br.com.tecdainfor.model.Setor</class>
+          <class>br.com.tecdainfor.model.Computador</class>
       <properties>
          <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
          <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
