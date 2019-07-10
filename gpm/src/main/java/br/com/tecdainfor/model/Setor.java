@@ -18,7 +18,10 @@ public class Setor {
 	@Column(name = "id_setor_pk", nullable = false)
 	private int id;
 	@Column(name = "nome_setor", nullable = false)
-	private String nome_setor;
+	private String nome;
+	@Column(name = "descricao_setor", nullable = false)
+	private String descricao;
+	
 	
 	
 	
@@ -31,12 +34,21 @@ public class Setor {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getNome_setor() {
-		return nome_setor;
+	
+	public String getDescricao() {
+		return descricao;
 	}
-	public void setNome_setor(String nome_setor) {
-		this.nome_setor = nome_setor;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	
 
 }
 

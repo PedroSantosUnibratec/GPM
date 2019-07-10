@@ -33,6 +33,7 @@
 						     <li><a href="computador/listar">Computador</a></li>
 						     <li><a href="monitor/listar">Monitor</a></li>
 						     <li><a href="impressora/listar">Impressora</a></li>
+						     <li><a href="setor/listar">Setor</a></li>
 			    		</ul>
 				   	</div>
 		  		</div>
@@ -89,7 +90,7 @@
 									<h2>Contato</h2>
 									<p>
 										Email: leomiroliveira5@hotmail.com <br></br> Fone: (081)
-										997491889 <br></br> Técnico Responsábel:Leomir Oliveira<br></br>
+										997491889 <br></br> Técnico Responsábel: Leomir Oliveira<br></br>
 										Empresa: TecDaInfor
 									</p>
 								</div>

@@ -34,6 +34,7 @@
 						     <li><a href="../computador/listar">Computador</a></li>
 						     <li><a href="../monitor/listar">Monitor</a></li>
 						     <li><a href="../impressora/listar">Impressora</a></li>
+						  <li><a href="/gpm/setor/listar">Setor</a></li>
 				    </ul>
 			   </div>
 		  </div>

@@ -1,11 +1,15 @@
 package br.com.tecdainfor.model;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name= "TB_COMPUTADOR")
@@ -31,6 +35,14 @@ public class Computador {
 	private String tipo;
 	@Column(name = "st_ip")
 	private String ip;
+//	@Column(name = "st_date")
+//	@DateTimeFormat(pattern = "yyyy-MM-dd")
+//	private Date dataCriacao;
+	
+	
+	
+	
+	
 	public int getId() {
 		return id;
 	}

@@ -50,7 +50,7 @@ public class SetorDAOImpl implements SetorDAO {
 	@Override
 	@javax.transaction.Transactional
 	public List<Setor> listarSetores() {
-		return manager.createQuery("SELECT u FROM Setor", Setor.class).getResultList();
+		return manager.createQuery("SELECT u FROM Setor u ORDER BY u.nome", Setor.class).getResultList();
 	}
 
 }

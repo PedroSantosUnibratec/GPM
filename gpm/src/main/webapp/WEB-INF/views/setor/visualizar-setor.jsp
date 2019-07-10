@@ -2,12 +2,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
-<html ng-app="MonitorControllerApp" >
+<html ng-app="SetorControllerApp" >
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>GPM | EDITAR CADASTRO DE MONITOR</title>
+		<title>GPM | VISUALIZAR SETOR</title>
 		
 		<!-- CSS -->
 		<link href="<c:url value='/resources/css/bootstrap.min.css' />" rel="stylesheet"></link>
@@ -33,11 +33,11 @@
 				   	<div id="navbar" class="navbar-collapse collapse">
 					    <ul class="nav navbar-nav navbar-right">
 						     <li><a href="/gpm/painel">Início</a></li>
-						     <li><a href="../usuario/listar">Usuário</a></li>
-						     <li><a href="../computador/listar">Computador</a></li>
-						     <li><a href="../listar">Monitor</a></li>
-						     <li><a href="../impressora/listar">Impressora</a></li>
-						     <li><a href="/gpm/setor/listar">Setor</a></li>
+						     <li><a href="/gpm/usuario/listar">Usuário</a></li>
+						     <li><a href="../listar">Computador</a></li>
+						     <li><a href="/gpm/monitor/listar">Monitor</a></li>
+						     <li><a href="/gpm/impressora/listar">Impressora</a></li>
+						   <li><a href="/gpm/setor/listar">Setor</a></li>
 			    		</ul>
 				   	</div>
 		  		</div>
@@ -47,55 +47,53 @@
 
 		<section>
 			<!-- Painel -->
-			<div class="panel panel-computador panel-primary">
+			<div class="panel panel-setor panel-primary">
 				<div class="panel-heading">
-					<h3 class="panel-title panel-title-computador">Visualizar Cadastro de
-						Monitor</h3>
+					<h3 class="panel-title panel-title-setor">Visualizar Cadastro de
+						Setor</h3>
 				</div>
 				
 				<!-- Formulário -->
-				<form class="form-horizontal" ng-controller="MonitorController">
+				<form name="userForm" ng-submit="submitForm(userForm.$valid)" class="form-horizontal" ng-controller="SetorController" >
 					<div class="panel panel-default">
 						<div class="panel-body">
-							<div class="form-group">
+						
+						
+						
+						
+						<div class="form-group">
 								<label for="codigo" class="col-sm-2 control-label">Codigo
 								*</label>
-								<div class="col-sm-2">
+								<div class="col-sm-1">
 									<input type="text" class="form-control" id="id" name="id"
-										placeholder="Código do Monitor" required="required"
-										autofocus="autofocus" ng-model="id" readonly="readonly"  ng-init="id='${monitor.id}'"/>
+										placeholder="Código do setor" required="required"
+										autofocus="autofocus" ng-model="id" readonly="readonly"  ng-init="id='${setor.id}'"/>
 								</div>
-							</div>
-							
-								<div class="form-group">
-								<label for="modelo" class="col-sm-2 control-label">Modelo*</label>
-								<div class="col-sm-3"">
-									<input type="modelo" class="form-control" id="modelo" name="modelo"
-										placeholder="Modelo do monitor" required="required"
-										autofocus="autofocus" ng-model="modelo"  readonly="readonly" required ng-init="modelo='${monitor.modelo}'"/>
-										<p class="help-block"></p>
-								</div>
-							</div>
-
-							<div class="form-group" >
-								<label for="tomb" class="col-sm-2 control-label">Tombamento*</label>
+							</div>				
+						
+										
+						
+								
+								<div  class="form-group"  ng-class="{ 'has-error' : userForm.nome.$invalid && !userForm.nome.$pristine }">		
+								<label for="nome" class="col-sm-2 control-label">Nome*</label>
 								<div class="col-sm-3">
-									<input type="text" class="form-control" id="montomb"
-										name="montomb" placeholder="Tombamento(Patrimônio)" required
-										autofocus="autofocus" ng-model="montomb"  readonly="readonly" ng-init="montomb='${monitor.montomb}'"/>
-										<p class="help-block"></p>
-								</div>
-								</div>
-								<div class="form-group">
+										<input type="text" class="form-control" id="nome" name="nome"
+										placeholder="Nome do setor" required="required"
+										autofocus="autofocus" ng-model="nome" required  readonly="readonly" ng-init="nome='${setor.nome}'"/>
+										<p ng-show="userForm.nome.$invalid && !userForm.nome.$pristine" class="help-block"></p>
+								</div>	</div>
+							
+							<div  class="form-group"  ng-class="{ 'has-error' : userForm.descricao.$invalid && !userForm.descricao.$pristine }">		
 								<label for="descricao" class="col-sm-2 control-label">Descrição*</label>
 								<div class="col-sm-3">
-									<input type="text" class="form-control" id="descricao"
-										name="descricao" placeholder="Escreva uma descrição"
-										required autofocus="autofocus" ng-model="descricao"  readonly="readonly"  ng-init="descricao='${monitor.descricao}'" />
-										<p class="help-block"></p>
-									</div>
-							</div>
-							
+										<input type="text" class="form-control" id="descricao" name="descricao"
+										placeholder="Descrição do setor" required="required"
+										autofocus="autofocus" ng-model="descricao" required  readonly="readonly" ng-init="descricao='${setor.descricao}'"/>
+										<p ng-show="userForm.descricao.$invalid && !userForm.descricao.$pristine" class="help-block"></p>
+								</div>	</div>
+						
+														
+														
 						</div>
 					</div>
 				</form>
@@ -104,7 +102,7 @@
 			
 		<!-- AngularJS e JS -->
 		<script src="<c:url value='/resources/js/angular.min.js' />"></script>
-		<script src="<c:url value='/resources/controller/MonitorController.js' />"></script>
+		<script src="<c:url value='/resources/controller/SetorController.js' />"></script>
 		<script src="<c:url value='/resources/js/jquery-3.2.1.min.js' />"></script>
 		<script src="<c:url value='/resources/js/bootstrap.min.js' />"></script>
 					 

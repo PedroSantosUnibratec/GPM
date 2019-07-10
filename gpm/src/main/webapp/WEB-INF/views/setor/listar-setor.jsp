@@ -2,12 +2,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
-<html ng-app="ImpressoraControllerApp">
+<html ng-app="SetorControllerApp">
 	<head>
 		 <meta charset="utf-8">
 		 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 		 <meta name="viewport" content="width=device-width, initial-scale=1">
-		 <title>GPM | LISTA DE IMPRESSORAS</title>
+		 <title>GPM | LISTA DE SETORES</title>
 
 		 <!-- CSS -->
 		<link href="<c:url value='../resources/css/bootstrap.min.css' />" rel="stylesheet"></link>
@@ -31,35 +31,24 @@
 				    <ul class="nav navbar-nav navbar-right">
 					      <li><a href="../painel">Início</a></li>
 						  <li><a href="../usuario/listar">Usuário</a></li>
-						  <li><a href="../computador/listar">Computador</a></li>
+						  <li><a href="../listar">Computador</a></li>
 						  <li><a href="../monitor/listar">Monitor</a></li>
 						  <li><a href="../impressora/listar">Impressora</a></li>
-						  <li><a href="/gpm/setor/listar">Setor</a></li>
+						    <li><a href="/gpm/setor/listar">Setor</a></li>
 				    </ul>
 			   </div>
 		  </div>
 	 </nav>
 	
-	 <div id="main" class="container-fluid" style="margin-top: 50px" ng-controller="ImpressoraController">
+	 <div id="main" class="container-fluid" style="margin-top: 50px" ng-controller="SetorController" data-ng-init="init(nome)">
 	 
 	 	<div id="top" class="row">
 			<div class="col-sm-3">
-				<h2>Lista Impressora</h2>
+				<h2>Lista de Setores</h2>
 			</div>
-			<div class="col-sm-6">
-				
-				<div class="input-group h2">
-					<input name="setor" class="form-control" id="setor" type="text" placeholder="Pesquisar Impressora" ng-model="setor">
-					<span class="input-group-btn">
-						<button class="btn btn-primary" type="submit" ng-click="buscar()">
-							<span3 class="glyphicon glyphicon-search"></span>
-						</button>
-					</span>
-				</div>
-				
-			</div>
+		
 			<div class="col-sm-3">
-				<a href="cadastrar" class="btn btn-primary pull-right h2">Cadastrar Nova Impressora</a>
+				<a href="cadastrar" class="btn btn-primary pull-right h2">Cadastrar Novo Setor</a>
 			</div>
 		</div> <!-- /#top -->
 	 
@@ -68,32 +57,25 @@
 	 	<div id="list" class="row">
 		
 		<div class="table-responsive col-md-12">
-			<table class="table table-striped" cellspacing="0" cellpadding="0" ng-controller="ImpressoraController" data-ng-init="init()">
+			<table class="table table-striped" cellspacing="0" cellpadding="0" >
 				<thead>
 					<tr>
 						<th>ID</th>
-						<th>Modelo</th>
-						<th>Setor</th>
-						<th>IP</th>
-						<th>Ramal</th>
-						<th>Número de Série</th>
+						<th>Nome</th>
 						<th>Descrição</th>
+						
 						<th class="actions">Ações</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="impressora in impressoras">
-						<td>{{impressora.id}}</td>
-						<td>{{impressora.modelo}}</td>
-						<td>{{impressora.setor}}</td>
-						<td>{{impressora.ip}}</td>
-						<td>{{impressora.ramal}}</td>
-						<td>{{impressora.num_serie}}</td>
-						<td>{{impressora.descricao}}</td>
+					<tr ng-repeat="setor in setores">
+						<td>{{setor.id}}</td>
+						<td>{{setor.nome}}</td>
+						<td>{{setor.descricao}}</td>
 						<td class="actions">
-							<a class="btn btn-success btn-xs" href="visualizar" ng-href="visualizar/{{impressora.id}}">Visualizar</a>
-							<a class="btn btn-warning btn-xs" href="alterar" ng-href="alterar/{{impressora.id}}" >Editar</a>
-							<a class="btn btn-danger btn-xs"  href="excluir" data-toggle="modal" data-target="#delete-modal" ng-click="excluir(impressora.id, impressora.modelo)">Excluir</a>
+							<a class="btn btn-success btn-xs" href="visualizar" ng-href="visualizar/{{setor.id}}">Visualizar</a>
+							<a class="btn btn-warning btn-xs" href="alterar" ng-href="alterar/{{setor.id}}" >Editar</a>
+							<a class="btn btn-danger btn-xs"  href="excluir" data-toggle="modal" data-target="#delete-modal" ng-click="excluir(setor.id)">Excluir</a>
 						</td>
 					</tr>
 				</tbody>
@@ -117,7 +99,7 @@
 	
 	 	<!-- AngularJS e JS -->
 		<script src="<c:url value='../resources/js/angular.min.js' />"></script>
-		<script src="<c:url value='../resources/controller/ImpressoraController.js' />"></script>
+		<script src="<c:url value='../resources/controller/SetorController.js' />"></script>
 		<script src="<c:url value='../resources/js/jquery-3.2.1.min.js' />"></script>
 		<script src="<c:url value='../resources/js/bootstrap.min.js' />"></script>
 	

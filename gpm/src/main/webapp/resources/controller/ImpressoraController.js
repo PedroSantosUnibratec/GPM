@@ -99,7 +99,7 @@ ImpressoraControllerApp.controller("ImpressoraController", function($scope, $win
 		
 		response.error(function(data, status, headers, config){
 			
-			$window.alert("Erro ao Tentar Alterar ");
+			$window.alert("Erro ao Tentar Cadastrar ");
 			
 		});
 	}
