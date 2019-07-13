@@ -1,5 +1,6 @@
 package br.com.tecdainfor.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.Column;
@@ -13,7 +14,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name= "TB_COMPUTADOR")
-public class Computador {
+public class Computador implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

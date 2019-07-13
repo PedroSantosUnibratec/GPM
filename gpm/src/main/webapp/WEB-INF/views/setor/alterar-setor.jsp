@@ -50,10 +50,10 @@
 
 	<section>
 		<!-- Painel -->
-		<div class="panel panel-computador panel-primary">
+		<div class="panel panel-setor panel-primary">
 			<div class="panel-heading">
-				<h3 class="panel-title panel-title-computador">Cadastro de
-					Computador</h3>
+				<h3 class="panel-title panel-title-setor">Cadastro de
+					Setor</h3>
 			</div>
 
 			<!-- Formulário -->
@@ -66,7 +66,7 @@
 								*</label>
 							<div class="col-sm-1">
 								<input type="text" class="form-control" id="id" name="id"
-									placeholder="Código do Computador" required="required"
+									placeholder="Código do Setor" required="required"
 									autofocus="autofocus" ng-model="id" readonly="readonly"
 									ng-init="id='${setor.id}'" />
 							</div>
@@ -77,8 +77,8 @@
 							<div class="col-sm-1">
 								<input type="text" class="form-control" id="descricao" name="descricao"
 									placeholder="Descrição do Setor" required="required"
-									autofocus="autofocus" ng-model="id" readonly="readonly"
-									ng-init="id='${setor.descricao}'" />
+									autofocus="autofocus" ng-model="descricao" 
+									ng-init="descricao='${setor.descricao}'" />
 							</div>
 						</div>
 
@@ -116,12 +116,11 @@
 	</section>
 
 	<!-- AngularJS e JS -->
-	<script src="<c:url value='/resources/js/angular.min.js' />"></script>
-	<script
-		src="<c:url value='/resources/controller/SetorController.js' />"></script>
-	<script src="<c:url value='/resources/js/jquery-3.2.1.min.js' />"></script>
-	<script src="<c:url value='/resources/js/bootstrap.min.js' />"></script>
-
+	<script src="<c:url value='../resources/js/angular.min.js' />"></script>
+	<script src="<c:url value='../resources/controller/SetorController.js' />"></script>
+	<script src="<c:url value='../resources/js/jquery-3.2.1.min.js' />"></script>
+	<script src="<c:url value='../resources/js/bootstrap.min.js' />"></script>
+	
 </body>
 
 </html>

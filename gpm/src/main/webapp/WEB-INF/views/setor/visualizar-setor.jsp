@@ -101,10 +101,11 @@
 		</section>
 			
 		<!-- AngularJS e JS -->
-		<script src="<c:url value='/resources/js/angular.min.js' />"></script>
-		<script src="<c:url value='/resources/controller/SetorController.js' />"></script>
-		<script src="<c:url value='/resources/js/jquery-3.2.1.min.js' />"></script>
-		<script src="<c:url value='/resources/js/bootstrap.min.js' />"></script>
+	<script src="<c:url value='../resources/js/angular.min.js' />"></script>
+	<script src="<c:url value='../resources/controller/SetorController.js' />"></script>
+	<script src="<c:url value='../resources/js/jquery-3.2.1.min.js' />"></script>
+	<script src="<c:url value='../resources/js/bootstrap.min.js' />"></script>
+	
 					 
 	</body>
 

@@ -1,5 +1,7 @@
 package br.com.tecdainfor.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "TB_MONITOR")
-public class Monitor {
+public class Monitor implements Serializable {
 	
 	// Atributos da classe monitor
 

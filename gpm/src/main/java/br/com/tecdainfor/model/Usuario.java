@@ -1,17 +1,25 @@
 package br.com.tecdainfor.model;
 
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.List;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
 import javax.persistence.Table;
 
 // Classe Usuário.
 
 @Entity
 @Table(name = "TB_USUARIO")
-public class Usuario {
+public class Usuario implements Serializable {
 	
 	//Atributos da classe usuário
 	
@@ -30,11 +38,33 @@ public class Usuario {
 	@Column(name = "st_perfil")
 	private String perfil;
 	
+
+
+	
+	//Relacionamento implementado
+	
+    
+	@ManyToMany(mappedBy="listadeusuarios")
+	private Collection<Setor> listadesetores;
+
+	
+	
+	
 	//Gets e Sets da classe usuário.
+	
+
+	public Collection<Setor> getListadesetores() {
+		return listadesetores;
+	}
+	public void setListadesetores(Collection<Setor> listadesetores) {
+		this.listadesetores = listadesetores;
+	}
+	
 	
 	public int getId() {
 		return id;
 	}
+	
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -67,5 +97,12 @@ public class Usuario {
 	}
 	public void setPerfil(String perfil) {
 		this.perfil = perfil;
-	}	
+	}
+
+
+
+
+
+	
+	
 }

@@ -2,9 +2,11 @@ package br.com.tecdainfor.dao;
 
 import java.util.List;
 
+
+
 import br.com.tecdainfor.model.Usuario;
 
-public interface UsuarioDAO {
+public interface UsuarioDAO{
 	
 	public Usuario cadastrarUsuario(Usuario usuario);
 	
@@ -25,5 +27,7 @@ public interface UsuarioDAO {
 	public List<Usuario> listarUsuarios();
 	
 	public List<Usuario> consultaPagina(String numeroPagina);
+	
+	
 
 }

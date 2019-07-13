@@ -37,7 +37,7 @@
 						<li><a href="../computador/listar">Computador</a></li>
 						<li><a href="../monitor/listar">Monitor</a></li>
 						<li><a href="../impressora/listar">Impressora</a></li>
-						  <li><a href="/gpm/setor/listar">Setor</a></li>
+						<li><a href="/gpm/setor/listar">Setor</a></li>
 					</ul>
 				</div>
 			</div>
@@ -47,9 +47,9 @@
 
 	<section>
 		<!-- Painel -->
-		<div class="panel panel-computador panel-primary">
+		<div class="panel panel-setor panel-primary">
 			<div class="panel-heading">
-				<h3 class="panel-title panel-title-computador">Cadastro de
+				<h3 class="panel-title panel-title-setor">Cadastro de
 					Setor</h3>
 			</div>
 
@@ -59,7 +59,7 @@
 				<div class="panel panel-default">
 					<div class="panel-body">
 
-					
+
 
 						<div class="form-group"
 							ng-class="{ 'has-error' : userForm.nome.$invalid && !userForm.nome.$pristine }">
@@ -77,47 +77,49 @@
 									máximo de 30 caracteres.</p>
 							</div>
 						</div>
-						
-						
+
+
 						<div class="form-group"
 							ng-class="{ 'has-error' : userForm.descricao.$invalid && !userForm.descricao.$pristine }">
 							<label for="descricao" class="col-sm-2 control-label">Descrição*</label>
 							<div class="col-sm-3">
-								<input type="text" class="form-control" id="descricao" name="descricao"
-									placeholder="Descrição do setor" required="required"
-									autofocus="autofocus" ng-model="descricao" ng-minlength="3"
-									ng-maxlength="30" required />
-								<p ng-show="userForm.descricao.$invalid && !userForm.descricao.$pristine"
+								<input type="text" class="form-control" id="descricao"
+									name="descricao" placeholder="Descrição do setor"
+									required="required" autofocus="autofocus" ng-model="descricao"
+									ng-minlength="3" ng-maxlength="30" required />
+								<p
+									ng-show="userForm.descricao.$invalid && !userForm.descricao.$pristine"
 									class="help-block">Descrição é Obrigatório.</p>
-								<p ng-show="userForm.descricao.$error.minlength" class="help-block">Campo
-									mínimo de 3 caracteres.</p>
-								<p ng-show="userForm.descricao.$error.maxlength" class="help-block">Campo
-									máximo de 30 caracteres.</p>
+								<p ng-show="userForm.descricao.$error.minlength"
+									class="help-block">Campo mínimo de 3 caracteres.</p>
+								<p ng-show="userForm.descricao.$error.maxlength"
+									class="help-block">Campo máximo de 30 caracteres.</p>
 							</div>
 						</div>
-						
 
 
-								<div class="form-group" align="center">
-									<div class="col-sm-5">
-										<button type="button" class="btn btn-primary"
-											ng-disabled="userForm.$invalid"
-											ng-click="submitForm(userForm.$valid)">Cadastrar</button>
-									</div>
-								</div>
+
+						<div class="form-group" align="center">
+							<div class="col-sm-5">
+								<button type="button" class="btn btn-primary"
+									ng-disabled="userForm.$invalid"
+									ng-click="submitForm(userForm.$valid)">Cadastrar</button>
 							</div>
 						</div>
 					</div>
 				</div>
-			</form>
+		</div>
+		</div>
+		</form>
 		</div>
 	</section>
 
 	<!-- AngularJS e JS -->
 	<script src="<c:url value='../resources/js/angular.min.js' />"></script>
-	<script src="<c:url value='../resources/controller/SetorController.js' />"></script>
+	<script	src="<c:url value='../resources/controller/SetorController.js' />"></script>
 	<script src="<c:url value='../resources/js/jquery-3.2.1.min.js' />"></script>
 	<script src="<c:url value='../resources/js/bootstrap.min.js' />"></script>
+
 
 </body>
 </html>

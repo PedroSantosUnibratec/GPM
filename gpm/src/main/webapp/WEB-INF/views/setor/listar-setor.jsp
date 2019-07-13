@@ -40,7 +40,7 @@
 		  </div>
 	 </nav>
 	
-	 <div id="main" class="container-fluid" style="margin-top: 50px" ng-controller="SetorController" data-ng-init="init(nome)">
+	 <div id="main" class="container-fluid" style="margin-top: 50px" ng-controller="SetorController">
 	 
 	 	<div id="top" class="row">
 			<div class="col-sm-3">
@@ -63,7 +63,6 @@
 						<th>ID</th>
 						<th>Nome</th>
 						<th>Descrição</th>
-						
 						<th class="actions">Ações</th>
 					</tr>
 				</thead>
@@ -98,10 +97,11 @@
 	 </div> <!-- /#main --> 
 	
 	 	<!-- AngularJS e JS -->
-		<script src="<c:url value='../resources/js/angular.min.js' />"></script>
-		<script src="<c:url value='../resources/controller/SetorController.js' />"></script>
-		<script src="<c:url value='../resources/js/jquery-3.2.1.min.js' />"></script>
-		<script src="<c:url value='../resources/js/bootstrap.min.js' />"></script>
+	<script src="<c:url value='../resources/js/angular.min.js' />"></script>
+	<script	src="<c:url value='../resources/controller/SetorController.js' />"></script>
+	<script src="<c:url value='../resources/js/jquery-3.2.1.min.js' />"></script>
+	<script src="<c:url value='../resources/js/bootstrap.min.js' />"></script>
+	
 	
 	</body>
 	

@@ -46,7 +46,7 @@ public class SetorController {
 	@RequestMapping(value = "/visualizar/{id}", method = RequestMethod.GET)
 	public ModelAndView visualizar(@PathVariable int id) {
 		Setor setor = setordao.consultarSetor(id);
-		return new ModelAndView("setor/vizualuzar-setor", "setor", setor);
+		return new ModelAndView("setor/visualizar-setor", "setor", setor);
 
 		
 	}

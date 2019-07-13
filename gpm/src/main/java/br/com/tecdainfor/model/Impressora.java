@@ -1,5 +1,7 @@
 package br.com.tecdainfor.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "TB_IMPRESSORA")
-public class Impressora {
+public class Impressora implements Serializable {
 	
 	// Atributos da classe Impressora
 
