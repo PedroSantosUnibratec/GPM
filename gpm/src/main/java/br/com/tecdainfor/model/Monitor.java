@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 // Classe Monitor
@@ -28,11 +30,29 @@ public class Monitor implements Serializable {
 	@Column(name = "st_descricao")
 	private String descricao;
 	
+	
+	
+	@ManyToOne(targetEntity = Setor.class)
+	 private Setor monitor_setor;
+	
+	
+	
 	//Gets and Sets da classe monitor
 	
+	 
+	 
 	public int getId() {
 		return id;
 	}
+	
+	public Setor getMonitor_setor() {
+		return monitor_setor;
+	}
+
+	public void setMonitor_setor(Setor monitor_setor) {
+		this.monitor_setor = monitor_setor;
+	}
+
 	public void setId(int id) {
 		this.id = id;
 	}

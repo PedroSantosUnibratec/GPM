@@ -15,6 +15,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -39,10 +40,27 @@ public class Setor implements Serializable {
 	{@JoinColumn(name="id_setor_pk"),
 	}, inverseJoinColumns=
 	  {@JoinColumn(name="id_usuario_pk")})
+	@Column(name = "listadeusuarios", nullable = false)
 	private Collection<Usuario> listadeusuarios;
 	
 	
 
+	
+	@OneToMany(mappedBy = "monitor_setor", targetEntity = Monitor.class, 
+	fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@Column(name = "listademonitores", nullable = false)
+	private Collection<Monitor> monitores;
+	
+	
+	@OneToMany(mappedBy = "computador_setor", targetEntity = Computador.class, 
+	fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@Column(name = "listadecomputadores", nullable = false)
+	private Collection<Computador> computadores;
+	
+	@OneToMany(mappedBy = "impressora_setor", targetEntity = Impressora.class, 
+	fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@Column(name = "listadeimpressoras", nullable = false)
+	private Collection<Impressora> impressoras;
 	
 	
 	
@@ -53,6 +71,30 @@ public class Setor implements Serializable {
 	
 	public Collection<Usuario> getListadeusuarios() {
 		return listadeusuarios;
+	}
+
+	public Collection<Monitor> getMonitores() {
+		return monitores;
+	}
+
+	public void setMonitores(Collection<Monitor> monitores) {
+		this.monitores = monitores;
+	}
+
+	public Collection<Computador> getComputadores() {
+		return computadores;
+	}
+
+	public void setComputadores(Collection<Computador> computadores) {
+		this.computadores = computadores;
+	}
+
+	public Collection<Impressora> getImpressoras() {
+		return impressoras;
+	}
+
+	public void setImpressoras(Collection<Impressora> impressoras) {
+		this.impressoras = impressoras;
 	}
 
 	public void setListadeusuarios(Collection<Usuario> listadeusuarios) {

@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -25,21 +27,33 @@ public class Impressora implements Serializable {
 	private String ip;
 	@Column(name = "st_ramal")
 	private int ramal;
-	@Column(name = "st_setor")
-	private String setor;
 	@Column(name = "st_num_serie")
 	private String num_serie;
 	@Column(name = "st_modelo")
 	private String modelo;
 	
 	
+	@ManyToOne(targetEntity = Setor.class)
+	 private Setor impressora_setor;
 	
-	// Geters e Seters da classa Impressora
 	
+	
+	// Geters e Seters da classe Impressora
+	
+	 
 	
 	public int getId() {
 		return id;
 	}
+
+	public Setor getImpressora_setor() {
+		return impressora_setor;
+	}
+
+	public void setImpressora_setor(Setor impressora_setor) {
+		this.impressora_setor = impressora_setor;
+	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -61,12 +75,7 @@ public class Impressora implements Serializable {
 	public void setRamal(int ramal) {
 		this.ramal = ramal;
 	}
-	public String getSetor() {
-		return setor;
-	}
-	public void setSetor(String setor) {
-		this.setor = setor;
-	}
+
 	public String getNum_serie() {
 		return num_serie;
 	}

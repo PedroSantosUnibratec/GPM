@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -30,9 +32,7 @@ public class Computador implements Serializable {
 	private String gap_tomb;
 	@Column(name = "st_ramal")
 	private int ramal;
-	@Column(name = "st_setor")
-	private String setor;
-	@Column(name = "st_tipo")
+    @Column(name = "st_tipo")
 	private String tipo;
 	@Column(name = "st_ip")
 	private String ip;
@@ -42,10 +42,20 @@ public class Computador implements Serializable {
 	
 	
 	
+	@ManyToOne(targetEntity = Setor.class)
+	 private Setor computador_setor;
 	
+	//Gets and Sets da classe setor
 	
+
 	public int getId() {
 		return id;
+	}
+	public Setor getComputador_setor() {
+		return computador_setor;
+	}
+	public void setComputador_setor(Setor computador_setor) {
+		this.computador_setor = computador_setor;
 	}
 	public void setId(int id) {
 		this.id = id;
@@ -80,12 +90,8 @@ public class Computador implements Serializable {
 	public void setRamal(int ramal) {
 		this.ramal = ramal;
 	}
-	public String getSetor() {
-		return setor;
-	}
-	public void setSetor(String setor) {
-		this.setor = setor;
-	}
+
+	
 	public String getTipo() {
 		return tipo;
 	}
