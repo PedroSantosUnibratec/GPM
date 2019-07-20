@@ -30,8 +30,8 @@
 			   <div id="navbar" class="navbar-collapse collapse">
 				    <ul class="nav navbar-nav navbar-right">
 					       <li><a href="/gpm/painel">Início</a></li>
-						  <li><a href="vusuario/listar">Usuário</a></li>
-						  <li><a href="/gpm/listar">Computador</a></li>
+						  <li><a href="/gpm/usuario/listar">Usuário</a></li>
+						  <li><a href="/gpm/computador/listar">Computador</a></li>
 						  <li><a href="/gpm/monitor/listar">Monitor</a></li>
 						  <li><a href="/gpm/impressora/listar">Impressora</a></li>
 						    <li><a href="/gpm/setor/listar">Setor</a></li>
@@ -73,6 +73,7 @@
 					<tr>
 						<th>ID</th>
 						<th>Modelo</th>
+						<th>Setor</th>
 						<th>Tombamento</th>
 						<th>Descrição</th>
 						<th class="actions">Ações</th>
@@ -82,6 +83,7 @@
 					<tr ng-repeat="monitor in monitores">
 						<td>{{monitor.id}}</td>
 						<td>{{monitor.modelo}}</td>
+						<td>{{monitor.setor.nome}}</td>
 						<td>{{monitor.montomb}}</td>
 						<td>{{monitor.descricao}}</td>
 						<td class="actions">

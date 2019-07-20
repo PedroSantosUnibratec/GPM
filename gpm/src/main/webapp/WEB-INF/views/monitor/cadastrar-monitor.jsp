@@ -32,9 +32,9 @@
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-					   <li><a href="/gpm/painel">Início</a></li>
-						  <li><a href="vusuario/listar">Usuário</a></li>
-						  <li><a href="/gpm/listar">Computador</a></li>
+					  <li><a href="/gpm/painel">Início</a></li>
+						  <li><a href="/gpm/usuario/listar">Usuário</a></li>
+						  <li><a href="/gpm/computador/listar">Computador</a></li>
 						  <li><a href="/gpm/monitor/listar">Monitor</a></li>
 						  <li><a href="/gpm/impressora/listar">Impressora</a></li>
 						    <li><a href="/gpm/setor/listar">Setor</a></li>
@@ -44,7 +44,8 @@
 		</nav>
 
 	</header>
-
+<div id="main" class="container-fluid" style="margin-top: 50px" data-ng-init="listaSetor()"
+		ng-controller="MonitorController">
 	<section>
 		<!-- Painel -->
 		<div class="panel panel-computador panel-primary">
@@ -87,6 +88,18 @@
 							</div>
 						</div>
 
+
+							<div class="form-group"
+								ng-class="{ 'has-error' : userForm.modelo.$invalid && !userForm.modelo.$pristine }">
+								<label for="setor" class="col-sm-2 control-label">Setor*</label>
+								<div class="col-sm-2">
+										<select ng-model="setor.id" name="setor" id="setor" class="form-control"
+										ng-options="setor.nome for setor in setores"></select>
+									
+									
+							</div>
+							</div>
+
 						<div class="form-group"
 							ng-class="{ 'has-error' : userForm.descricao.$invalid && !userForm.descricao.$pristine }">
 							<label for="descricao" class="col-sm-2 control-label">Descrição*</label>
@@ -113,7 +126,7 @@
 			</form>
 		</div>
 	</section>
-
+</div>
 	<!-- AngularJS e JS -->
 	<script src="<c:url value='../resources/js/angular.min.js' />"></script>
 	<script

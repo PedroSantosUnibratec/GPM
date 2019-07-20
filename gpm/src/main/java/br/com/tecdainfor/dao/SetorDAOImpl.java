@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import br.com.tecdainfor.model.Computador;
 import br.com.tecdainfor.model.Setor;
+import br.com.tecdainfor.model.Usuario;
 
 @Repository
 public class SetorDAOImpl implements SetorDAO {
@@ -38,6 +39,7 @@ public class SetorDAOImpl implements SetorDAO {
 	public Setor consultarSetor(int id) {
 		return manager.find(Setor.class, id);
 	}
+	
 
 	@Override
 	@javax.transaction.Transactional

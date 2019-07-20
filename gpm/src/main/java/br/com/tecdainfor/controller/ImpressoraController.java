@@ -12,12 +12,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.tecdainfor.dao.ImpressoraDAO;
+import br.com.tecdainfor.dao.SetorDAO;
 import br.com.tecdainfor.model.Impressora;
+import br.com.tecdainfor.model.Setor;
 
 @Controller
 @RequestMapping("/impressora")
 public class ImpressoraController {
 	
+	
+
+	@Autowired
+	SetorDAO setordao;
 	@Autowired
 	ImpressoraDAO impressoradao;
 	
@@ -50,6 +56,11 @@ public class ImpressoraController {
 	@RequestMapping(value = "/lista", method= RequestMethod.GET)
 	public @ResponseBody List<Impressora> ConsultarTodos(){
 		return 	this.impressoradao.listarImpressoras();
+	}
+	
+	@RequestMapping(value = "/listasetor", method= RequestMethod.GET)
+	public @ResponseBody List<Setor> ConsultarSetor(){
+		return 	this.setordao.listarSetores();
 	}
 	
 	@RequestMapping(value = "/cadastrar", method = RequestMethod.POST)

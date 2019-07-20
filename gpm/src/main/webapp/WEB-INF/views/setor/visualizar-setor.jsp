@@ -32,9 +32,9 @@
 				   	</div>
 				   	<div id="navbar" class="navbar-collapse collapse">
 					    <ul class="nav navbar-nav navbar-right">
-						     <li><a href="/gpm/painel">Início</a></li>
-						  <li><a href="vusuario/listar">Usuário</a></li>
-						  <li><a href="/gpm/listar">Computador</a></li>
+						    <li><a href="/gpm/painel">Início</a></li>
+						  <li><a href="/gpm/usuario/listar">Usuário</a></li>
+						  <li><a href="/gpm/computador/listar">Computador</a></li>
 						  <li><a href="/gpm/monitor/listar">Monitor</a></li>
 						  <li><a href="/gpm/impressora/listar">Impressora</a></li>
 						    <li><a href="/gpm/setor/listar">Setor</a></li>
@@ -74,7 +74,7 @@
 										
 						
 								
-								<div  class="form-group"  ng-class="{ 'has-error' : userForm.nome.$invalid && !userForm.nome.$pristine }">		
+								<div  class="form-group" >		
 								<label for="nome" class="col-sm-2 control-label">Nome*</label>
 								<div class="col-sm-3">
 										<input type="text" class="form-control" id="nome" name="nome"
@@ -83,7 +83,7 @@
 										<p ng-show="userForm.nome.$invalid && !userForm.nome.$pristine" class="help-block"></p>
 								</div>	</div>
 							
-							<div  class="form-group"  ng-class="{ 'has-error' : userForm.descricao.$invalid && !userForm.descricao.$pristine }">		
+							<div  class="form-group" >		
 								<label for="descricao" class="col-sm-2 control-label">Descrição*</label>
 								<div class="col-sm-3">
 										<input type="text" class="form-control" id="descricao" name="descricao"
@@ -100,12 +100,11 @@
 			</div>
 		</section>
 			
-		<!-- AngularJS e JS -->
-	<script src="<c:url value='../resources/js/angular.min.js' />"></script>
-	<script src="<c:url value='../resources/controller/SetorController.js' />"></script>
-	<script src="<c:url value='../resources/js/jquery-3.2.1.min.js' />"></script>
-	<script src="<c:url value='../resources/js/bootstrap.min.js' />"></script>
-	
+	<!-- AngularJS e JS -->
+		<script src="<c:url value='/resources/js/angular.min.js' />"></script>
+		<script src="<c:url value='/resources/controller/SetorController.js' />"></script>
+		<script src="<c:url value='/resources/js/jquery-3.2.1.min.js' />"></script>
+		<script src="<c:url value='/resources/js/bootstrap.min.js' />"></script>
 					 
 	</body>
 

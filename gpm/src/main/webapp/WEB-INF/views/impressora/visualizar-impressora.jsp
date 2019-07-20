@@ -33,8 +33,8 @@
 				   	<div id="navbar" class="navbar-collapse collapse">
 					    <ul class="nav navbar-nav navbar-right">
 						      <li><a href="/gpm/painel">Início</a></li>
-						  <li><a href="vusuario/listar">Usuário</a></li>
-						  <li><a href="/gpm/listar">Computador</a></li>
+						  <li><a href="/gpm/usuario/listar">Usuário</a></li>
+						  <li><a href="/gpm/computador/listar">Computador</a></li>
 						  <li><a href="/gpm/monitor/listar">Monitor</a></li>
 						  <li><a href="/gpm/impressora/listar">Impressora</a></li>
 						    <li><a href="/gpm/setor/listar">Setor</a></li>
@@ -100,11 +100,11 @@
 								</div>
 								
 								<div class="form-group" >
-								<label for="setor" class="col-sm-2 control-label">Setor*</label>
+								<label for="impressora_setor" class="col-sm-2 control-label">Setor*</label>
 								<div class="col-sm-3" >
-									<input type="text" class="form-control" id="setor"
-										name="setor" placeholder="Ex: Diagnósticos"
-										required autofocus="autofocus" ng-model="setor" readonly="readonly" ng-init="setor='${impressora.setor}'"/>
+									<input type="text" class="form-control" id="impressora_setor"
+										name="impressora_setor"
+										required autofocus="autofocus" ng-model="impressora_setor" readonly="readonly" ng-init="impressora_setor='${impressora.impressora_setor.nome}'"/>
 										<p  class="help-block">
 									</div>
 							</div>
@@ -113,7 +113,7 @@
 								<label for="ramal" class="col-sm-2 control-label">IP*</label>
 								<div class="col-sm-3">
 									<input type="text" class="form-control" id="ip"
-										name="ip" placeholder="Ex: 192.168.102.14" required
+										name="ip"  required
 										autofocus="autofocus" ng-model="ip" readonly="readonly" ng-init="ip='${impressora.ip}'"/>
 										<p ng-show="userForm.ip.$invalid && !userForm.ip.$pristine" class="help-block"></p>
 								</div>
@@ -123,7 +123,7 @@
 								<label for="setor" class="col-sm-2 control-label">Número de Série*</label>
 								<div class="col-sm-3" >
 									<input type="text" class="form-control" id="num_serie"
-										name="num_serie" placeholder="Ex:8511622515165"
+										name="num_serie" 
 										required autofocus="autofocus" ng-model="num_serie" readonly="readonly" ng-init="num_serie='${impressora.num_serie}'" />
 										<p class="help-block"></p>
 									</div>

@@ -14,8 +14,6 @@ SetorControllerApp
 					$scope.descricao = null;
 
 					$scope.init = function() {
-
-						
 							
 							$scope.listar();
 					}

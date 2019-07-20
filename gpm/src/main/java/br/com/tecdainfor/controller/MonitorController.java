@@ -12,13 +12,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.tecdainfor.dao.MonitorDAO;
+import br.com.tecdainfor.dao.SetorDAO;
 import br.com.tecdainfor.model.Monitor;
+import br.com.tecdainfor.model.Setor;
 
 
 @Controller
 @RequestMapping("/monitor")
 public class MonitorController {
 
+	@Autowired
+	SetorDAO setordao;
 	@Autowired
 	MonitorDAO monitordao;
 	
@@ -52,6 +56,11 @@ public class MonitorController {
 	@RequestMapping(value = "/lista", method= RequestMethod.GET)
 	public @ResponseBody List<Monitor> ConsultarTodos(){
 		return 	this.monitordao.listarMonitores();
+	}
+	
+	@RequestMapping(value = "/listasetor", method= RequestMethod.GET)
+	public @ResponseBody List<Setor> ConsultarSetor(){
+		return 	this.setordao.listarSetores();
 	}
 	
 	@RequestMapping(value = "/cadastrar", method = RequestMethod.POST)

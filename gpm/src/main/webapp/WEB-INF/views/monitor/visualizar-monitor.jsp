@@ -32,9 +32,9 @@
 				   	</div>
 				   	<div id="navbar" class="navbar-collapse collapse">
 					    <ul class="nav navbar-nav navbar-right">
-						       <li><a href="/gpm/painel">Início</a></li>
-						  <li><a href="vusuario/listar">Usuário</a></li>
-						  <li><a href="/gpm/listar">Computador</a></li>
+						   <li><a href="/gpm/painel">Início</a></li>
+						  <li><a href="/gpm/usuario/listar">Usuário</a></li>
+						  <li><a href="/gpm/computador/listar">Computador</a></li>
 						  <li><a href="/gpm/monitor/listar">Monitor</a></li>
 						  <li><a href="/gpm/impressora/listar">Impressora</a></li>
 						    <li><a href="/gpm/setor/listar">Setor</a></li>
@@ -76,6 +76,15 @@
 										<p class="help-block"></p>
 								</div>
 							</div>
+								<div class="form-group"  >
+								<label for="setor" class="col-sm-2 control-label">Setor*</label>
+								<div class="col-sm-2">
+									<input type="text" class="form-control" id="setor"
+										name="setor" placeholder="Setor" required
+										autofocus="autofocus" ng-model="setor.nome"  readonly="readonly" ng-init="setor='${monitor.monitor_setor.nome}'"/>
+										
+								</div>
+								</div>
 
 							<div class="form-group" >
 								<label for="tomb" class="col-sm-2 control-label">Tombamento*</label>

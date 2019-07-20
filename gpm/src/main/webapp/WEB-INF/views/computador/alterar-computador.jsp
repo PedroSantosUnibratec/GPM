@@ -35,24 +35,26 @@
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="/gpm/painel">Início</a></li>
-						<li><a href="/gpm/usuario/listar">Usuário</a></li>
-						 <li><a href="/gpm/computador/listar">Computador</a></li>
-						<li><a href="/gpm/monitor/listar">Monitor</a></li>
-						<li><a href="/gpm/listar">Impressora</a></li>
-						  <li><a href="/gpm/setor/listar">Setor</a></li>
+					  <li><a href="/gpm/painel">Início</a></li>
+						  <li><a href="/gpm/usuario/listar">Usuário</a></li>
+						  <li><a href="/gpm/computador/listar">Computador</a></li>
+						  <li><a href="/gpm/monitor/listar">Monitor</a></li>
+						  <li><a href="/gpm/impressora/listar">Impressora</a></li>
+						    <li><a href="/gpm/setor/listar">Setor</a></li>
 					</ul>
 				</div>
 			</div>
 		</nav>
 
 	</header>
-
+	
 	<section>
+	
+	
 		<!-- Painel -->
 		<div class="panel panel-computador panel-primary">
 			<div class="panel-heading">
-				<h3 class="panel-title panel-title-computador">Cadastro de
+				<h3 class="panel-title panel-title-computador">Edição de
 					Computador</h3>
 			</div>
 
@@ -129,18 +131,20 @@
 							</div>
 						</div>
 
-						<div class="form-group"
-							ng-class="{ 'has-error' : userForm.setor.$invalid && !userForm.setor.$pristine }">
-							<label for="setor" class="col-sm-2 control-label">Setor*</label>
-							<div class="col-sm-2">
-								<input type="text" class="form-control" id="setor" name="setor"
-									placeholder="Ex: Diagnósticos" required autofocus="autofocus"
-									ng-model="setor" ng-init="setor='${computador.setor}'" />
-								<p
-									ng-show="userForm.setor.$invalid && !userForm.setor.$pristine"
-									class="help-block"></p>
+
+
+
+							<div class="form-group">
+								<label for="setor" class="col-sm-2 control-label">Setor*</label>
+								<div class="col-sm-2">
+										<select ng-model="setor" class="form-control" name="setor" id="setor" 
+										ng-options="setor.nome for setor in setores"></select>
+									
+									
 							</div>
-						</div>
+							</div>
+							
+						
 
 						<div class="form-group"
 							ng-class="{ 'has-error' : userForm.ip.$invalid && !userForm.ip.$pristine }">
@@ -195,6 +199,7 @@
 			</form>
 		</div>
 	</section>
+
 
 	<!-- AngularJS e JS -->
 	<script src="<c:url value='/resources/js/angular.min.js' />"></script>

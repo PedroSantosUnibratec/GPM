@@ -32,12 +32,12 @@
 				   	</div>
 				   	<div id="navbar" class="navbar-collapse collapse">
 					    <ul class="nav navbar-nav navbar-right">
-						     <li><a href="/gpm/painel">Início</a></li>
-						     <li><a href="../listar">Usuário</a></li>
-						     <li><a href="/gpm/computador/listar">Computador</a></li>
-						     <li><a href="/gpm/monitor/listar">Monitor</a></li>
-						     <li><a href="/gpm/impressora/listar">Impressora</a></li>
-						      <li><a href="/gpm/setor/listar">Setor</a></li>
+						    <li><a href="/gpm/painel">Início</a></li>
+						  <li><a href="/gpm/usuario/listar">Usuário</a></li>
+						  <li><a href="/gpm/computador/listar">Computador</a></li>
+						  <li><a href="/gpm/monitor/listar">Monitor</a></li>
+						  <li><a href="/gpm/impressora/listar">Impressora</a></li>
+						    <li><a href="/gpm/setor/listar">Setor</a></li>
 			    		</ul>
 				   	</div>
 		  		</div>

@@ -29,13 +29,12 @@
 			   </div>
 			   <div id="navbar" class="navbar-collapse collapse">
 				    <ul class="nav navbar-nav navbar-right">
-					        <li><a href="/gpm/painel">Início</a></li>
-						  <li><a href="vusuario/listar">Usuário</a></li>
-						  <li><a href="/gpm/listar">Computador</a></li>
+					  <li><a href="/gpm/painel">Início</a></li>
+						  <li><a href="/gpm/usuario/listar">Usuário</a></li>
+						  <li><a href="/gpm/computador/listar">Computador</a></li>
 						  <li><a href="/gpm/monitor/listar">Monitor</a></li>
 						  <li><a href="/gpm/impressora/listar">Impressora</a></li>
-						    <li><a href="/gpm/setor/listar">Setor</a></li>
-				    </ul>
+						    <li><a href="/gpm/setor/listar">Setor</a></li>				    </ul>
 			   </div>
 		  </div>
 	 </nav>
@@ -60,6 +59,7 @@
 			</div>
 			<div class="col-sm-3">
 				<a href="cadastrar" class="btn btn-primary pull-right h2">Cadastrar Novo Computador</a>
+				
 			</div>
 		</div> <!-- /#top -->
 	 
@@ -91,7 +91,7 @@
 						<td class="actions">
 							<a class="btn btn-success btn-xs" href="visualizar" ng-href="visualizar/{{computador.id}}">Visualizar</a>
 							<a class="btn btn-warning btn-xs" href="alterar" ng-href="alterar/{{computador.id}}" >Editar</a>
-							<a class="btn btn-danger btn-xs"  href="excluir" data-toggle="modal" data-target="#delete-modal" ng-click="excluir(computador.id, computador.gap_tomb)">Excluir</a>
+							<a class="btn btn-danger btn-xs"  href="excluir" data-toggle="modal" data-target="#delete-modal" ng-click="excluir(computador.id, computador.modelo)">Excluir</a>
 						</td>
 					</tr>
 				</tbody>

@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import br.com.tecdainfor.dao.SetorDAO;
 import br.com.tecdainfor.model.Monitor;
 import br.com.tecdainfor.model.Setor;
+import br.com.tecdainfor.model.Usuario;
 
 @Controller
 @RequestMapping("/setor")
@@ -41,6 +42,7 @@ public class SetorController {
 		Setor setor = setordao.consultarSetor(id);
 		return new ModelAndView("setor/alterar-setor", "setor", setor);
 
+	
 }
 	
 	@RequestMapping(value = "/visualizar/{id}", method = RequestMethod.GET)

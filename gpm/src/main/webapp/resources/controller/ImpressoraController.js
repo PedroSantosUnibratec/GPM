@@ -18,7 +18,14 @@ ImpressoraControllerApp
 					$scope.ip = null;
 
 					$scope.init = function() {
+						
+					
+							$scope.listar();
+					
 
+					}
+
+					$scope.listar = function() {
 						$scope.impressoras = new Array();
 
 						var response = $http.get("lista");
@@ -35,6 +42,29 @@ ImpressoraControllerApp
 
 									$window
 											.alert("Erro ao Tentar Listar Verifique Sua Conexão com o Banco "
+													+ data);
+
+								});
+					}
+
+					$scope.listaSetor = function() {
+
+						$scope.setores = new Array();
+
+						var response = $http.get("listasetor");
+
+						response
+								.success(function(data, status, headers, config) {
+
+									$scope.setores = data;
+
+								});
+
+						response
+								.error(function(data, status, headers, config) {
+
+									$window
+											.alert("Erro ao Tentar Listar os Setores Verifique Sua Conexão com o Banco "
 													+ data);
 
 								});

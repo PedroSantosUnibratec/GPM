@@ -32,9 +32,9 @@
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-					   <li><a href="/gpm/painel">Início</a></li>
-						  <li><a href="vusuario/listar">Usuário</a></li>
-						  <li><a href="/gpm/listar">Computador</a></li>
+					  <li><a href="/gpm/painel">Início</a></li>
+						  <li><a href="/gpm/usuario/listar">Usuário</a></li>
+						  <li><a href="/gpm/computador/listar">Computador</a></li>
 						  <li><a href="/gpm/monitor/listar">Monitor</a></li>
 						  <li><a href="/gpm/impressora/listar">Impressora</a></li>
 						    <li><a href="/gpm/setor/listar">Setor</a></li>
@@ -44,8 +44,8 @@
 		</nav>
 
 	</header>
-	<div id="main" class="container-fluid" style="margin-top: 50px"
-		ng-controller="ComputadorController" data-ng-init="init(setor)">
+	<div id="main" class="container-fluid" style="margin-top: 50px" data-ng-init="listaSetor()"
+		ng-controller="ComputadorController">
 		<section>
 			<!-- Painel -->
 			<div class="panel panel-computador panel-primary">
@@ -75,7 +75,7 @@
 							</div>
 
 
-							<div class="form-group"
+							<div class="form-group" 
 								ng-class="{ 'has-error' : userForm.nome.$invalid && !userForm.nome.$pristine }">
 								<label for="nome" class="col-sm-2 control-label">Nome*</label>
 								<div class="col-sm-3">
@@ -139,7 +139,7 @@
 								ng-class="{ 'has-error' : userForm.modelo.$invalid && !userForm.modelo.$pristine }">
 								<label for="setor" class="col-sm-2 control-label">Setor*</label>
 								<div class="col-sm-2">
-										<select ng-model="setor" name="setor" id="setor"
+										<select ng-model="setor" name="setor" id="setor" class="form-control"
 										ng-options="setor.nome for setor in setores"></select>
 									
 									

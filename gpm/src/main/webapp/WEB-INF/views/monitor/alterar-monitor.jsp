@@ -36,8 +36,8 @@
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
 						   <li><a href="/gpm/painel">Início</a></li>
-						  <li><a href="vusuario/listar">Usuário</a></li>
-						  <li><a href="/gpm/listar">Computador</a></li>
+						  <li><a href="/gpm/usuario/listar">Usuário</a></li>
+						  <li><a href="/gpm/computador/listar">Computador</a></li>
 						  <li><a href="/gpm/monitor/listar">Monitor</a></li>
 						  <li><a href="/gpm/impressora/listar">Impressora</a></li>
 						    <li><a href="/gpm/setor/listar">Setor</a></li>
@@ -88,6 +88,7 @@
 							</div>
 						</div>
 
+
 						<div class="form-group"
 							ng-class="{ 'has-error' : userForm.montomb.$invalid && !userForm.montomb.$pristine }">
 							<label for="montomb" class="col-sm-2 control-label">Tombamento*</label>
@@ -99,6 +100,18 @@
 							</div>
 
 						</div>
+						
+                                 <div class="form-group">
+								<label for="setor" class="col-sm-2 control-label">Setor*</label>
+								<div class="col-sm-2">
+										<select ng-model="setor" class="form-control" name="setor" id="setor" 
+										ng-options="setor.nome for setor in setores"></select>
+									
+									
+							</div>
+							</div>
+							
+							
 						<div class="form-group">
 							<label for="descricao" class="col-sm-2 control-label">Descrição*</label>
 							<div class="col-sm-3"

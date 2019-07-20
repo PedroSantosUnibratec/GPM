@@ -32,9 +32,9 @@
 				   	</div>
 				   	<div id="navbar" class="navbar-collapse collapse">
 					    <ul class="nav navbar-nav navbar-right">
-						        <li><a href="/gpm/painel">Início</a></li>
-						  <li><a href="vusuario/listar">Usuário</a></li>
-						  <li><a href="/gpm/listar">Computador</a></li>
+						      <li><a href="/gpm/painel">Início</a></li>
+						  <li><a href="/gpm/usuario/listar">Usuário</a></li>
+						  <li><a href="/gpm/computador/listar">Computador</a></li>
 						  <li><a href="/gpm/monitor/listar">Monitor</a></li>
 						  <li><a href="/gpm/impressora/listar">Impressora</a></li>
 						    <li><a href="/gpm/setor/listar">Setor</a></li>
@@ -101,13 +101,13 @@
 								</div>
 								</div>
 								
-								<div class="form-group" ng-class="{ 'has-error' : userForm.setor.$invalid && !userForm.setor.$pristine }">
-								<label for="setor" class="col-sm-2 control-label">Setor*</label>
+								<div class="form-group" ng-class="{ 'has-error' : userForm.impressora_setor.$invalid && !userForm.impressora_setor.$pristine }">
+								<label for="impressora_setor" class="col-sm-2 control-label">Setor*</label>
 								<div class="col-sm-3">
-									<input type="text" class="form-control" id="setor"
-										name="setor" placeholder="Ex: Diagnósticos"
-										required autofocus="autofocus" ng-model="setor"  ng-init="setor='${impressora.setor}'"/>
-										<p ng-show="userForm.setor.$invalid && !userForm.setor.$pristine" class="help-block"></p>
+									<input type="text" class="form-control" id="impressora_setor"
+										name="impressora_setor" placeholder="Ex: Diagnósticos"
+										required autofocus="autofocus" ng-model="impressora_setor"  ng-init="impressora_setor='${impressora.impressora_setor.nome}'"/>
+										<p ng-show="userForm.impressora_setor.$invalid && !userForm.impressora_setor.$pristine" class="help-block"></p>
 									</div>
 							</div>
 

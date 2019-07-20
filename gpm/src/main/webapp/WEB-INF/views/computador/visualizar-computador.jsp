@@ -32,9 +32,9 @@
 				   	</div>
 				   	<div id="navbar" class="navbar-collapse collapse">
 					    <ul class="nav navbar-nav navbar-right">
-						       <li><a href="/gpm/painel">Início</a></li>
-						  <li><a href="vusuario/listar">Usuário</a></li>
-						  <li><a href="/gpm/listar">Computador</a></li>
+						   <li><a href="/gpm/painel">Início</a></li>
+						  <li><a href="/gpm/usuario/listar">Usuário</a></li>
+						  <li><a href="/gpm/computador/listar">Computador</a></li>
 						  <li><a href="/gpm/monitor/listar">Monitor</a></li>
 						  <li><a href="/gpm/impressora/listar">Impressora</a></li>
 						    <li><a href="/gpm/setor/listar">Setor</a></li>
@@ -72,7 +72,7 @@
 							</div>				
 						
 						
-								<div  class="form-group"  ng-class="{ 'has-error' : userForm.modelo.$invalid && !userForm.modelo.$pristine }">		
+								<div  class="form-group" >		
 								<label for="modelo" class="col-sm-2 control-label">Modelo*</label>
 								<div class="col-sm-2">
 										<input type="text" class="form-control" id="nome" name="nome"
@@ -83,7 +83,7 @@
 						
 						
 								
-								<div  class="form-group"  ng-class="{ 'has-error' : userForm.nome.$invalid && !userForm.nome.$pristine }">		
+								<div  class="form-group"  >		
 								<label for="nome" class="col-sm-2 control-label">Nome*</label>
 								<div class="col-sm-3">
 										<input type="text" class="form-control" id="nome" name="nome"
@@ -92,7 +92,7 @@
 										<p ng-show="userForm.nome.$invalid && !userForm.nome.$pristine" class="help-block"></p>
 								</div>	</div>
 							
-							<div  class="form-group"  ng-class="{ 'has-error' : userForm.descricao.$invalid && !userForm.descricao.$pristine }">		
+							<div  class="form-group" >		
 								<label for="descricao" class="col-sm-2 control-label">Descrição*</label>
 								<div class="col-sm-3">
 										<input type="text" class="form-control" id="descricao" name="descricao"
@@ -102,7 +102,7 @@
 								</div>	</div>
 							
 
-							<div class="form-group" ng-class="{ 'has-error' : userForm.gap_tomb.$invalid && !userForm.gap_tomb.$pristine }" >
+							<div class="form-group"  >
 								<label for="gap_tomb" class="col-sm-2 control-label">Tombamento*</label>
 								<div class="col-sm-2">
 									<input type="text" class="form-control" id="gap_tomb"
@@ -112,17 +112,18 @@
 								</div>
 								</div>
 								
-								<div class="form-group" ng-class="{ 'has-error' : userForm.setor.$invalid && !userForm.setor.$pristine }">
-								<label for="setor" class="col-sm-2 control-label">Setor*</label>
+								<div class="form-group" >
+								<label for="computador_setor" class="col-sm-2 control-label">Setor*</label>
 								<div class="col-sm-2">
-									<input type="text" class="form-control" id="setor"
-										name="setor" placeholder="Ex: Diagnósticos"
-										required autofocus="autofocus" ng-model="setor"  readonly="readonly" ng-init="setor='${computador.setor}'" />
-										<p ng-show="userForm.setor.$invalid && !userForm.setor.$pristine" class="help-block"></p>
-									</div>
-							</div>
-
-                                <div class="form-group" ng-class="{ 'has-error' : userForm.ip.$invalid && !userForm.ip.$pristine }" >
+									<input type="text" class="form-control" id="computador_setor"
+										name="computador_setor" placeholder="computador_setor" required
+										autofocus="autofocus" ng-model="computador_setor.nome"  readonly="readonly" ng-init="computador_setor='${computador.computador_setor.nome}'"/>
+										
+								</div>
+								</div>
+								
+						    
+                                <div class="form-group" >
 								<label for="ip" class="col-sm-2 control-label">IP*</label>
 								<div class="col-sm-2">
 									<input type="text" class="form-control" id="ip"
@@ -132,7 +133,7 @@
 								</div>
 								</div>
 								
-								 <div class="form-group" ng-class="{ 'has-error' : userForm.tipo.$invalid && !userForm.tipo.$pristine }" >
+								 <div class="form-group"  >
 								<label for="tipo" class="col-sm-2 control-label">Tipo*</label>
 								<div class="col-sm-1">
 									<input type="text" class="form-control" id="tipo"
@@ -144,7 +145,7 @@
 								
 							
 								
-									<div class="form-group" ng-class="{ 'has-error' : userForm.ramal.$invalid && !userForm.ramal.$pristine }" >
+									<div class="form-group"  >
 								<label for="ramal" class="col-sm-2 control-label">Ramal*</label>
 								<div class="col-sm-2">
 									<input type="text" class="form-control" id="ramal"

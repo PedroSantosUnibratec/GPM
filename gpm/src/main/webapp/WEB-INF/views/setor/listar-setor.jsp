@@ -29,9 +29,9 @@
 			   </div>
 			   <div id="navbar" class="navbar-collapse collapse">
 				    <ul class="nav navbar-nav navbar-right">
-					      <li><a href="/gpm/painel">Início</a></li>
-						  <li><a href="vusuario/listar">Usuário</a></li>
-						  <li><a href="/gpm/listar">Computador</a></li>
+					    <li><a href="/gpm/painel">Início</a></li>
+						  <li><a href="/gpm/usuario/listar">Usuário</a></li>
+						  <li><a href="/gpm/computador/listar">Computador</a></li>
 						  <li><a href="/gpm/monitor/listar">Monitor</a></li>
 						  <li><a href="/gpm/impressora/listar">Impressora</a></li>
 						    <li><a href="/gpm/setor/listar">Setor</a></li>
@@ -75,6 +75,7 @@
 							<a class="btn btn-success btn-xs" href="visualizar" ng-href="visualizar/{{setor.id}}">Visualizar</a>
 							<a class="btn btn-warning btn-xs" href="alterar" ng-href="alterar/{{setor.id}}" >Editar</a>
 							<a class="btn btn-danger btn-xs"  href="excluir" data-toggle="modal" data-target="#delete-modal" ng-click="excluir(setor.id)">Excluir</a>
+					    	<a class="btn btn-warning btn-xs" href="gerenciar" ng-href="gerenciar/{{setor.id}}">Gerenciar</a>
 						</td>
 					</tr>
 				</tbody>
@@ -96,11 +97,11 @@
 		</div> <!-- /#bottom -->
 	 </div> <!-- /#main --> 
 	
-	 	<!-- AngularJS e JS -->
-	<script src="<c:url value='../resources/js/angular.min.js' />"></script>
-	<script	src="<c:url value='../resources/controller/SetorController.js' />"></script>
-	<script src="<c:url value='../resources/js/jquery-3.2.1.min.js' />"></script>
-	<script src="<c:url value='../resources/js/bootstrap.min.js' />"></script>
+	 <!-- AngularJS e JS -->
+		<script src="<c:url value='/resources/js/angular.min.js' />"></script>
+	    <script src="<c:url value='/resources/controller/SetorController.js' />"></script>
+		<script src="<c:url value='/resources/js/jquery-3.2.1.min.js' />"></script>
+		<script src="<c:url value='/resources/js/bootstrap.min.js' />"></script>
 	
 	
 	</body>

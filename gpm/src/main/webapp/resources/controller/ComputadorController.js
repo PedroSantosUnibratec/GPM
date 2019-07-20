@@ -24,7 +24,7 @@ ComputadorControllerApp
 						if (setor == null) {
 
   					    	$scope.listar();
-							$scope.listaSetor();
+						
 
 						} else {
 
@@ -53,7 +53,7 @@ ComputadorControllerApp
 								.error(function(data, status, headers, config) {
 
 									$window
-											.alert("Erro ao Tentar Listar Verifique Sua Conexão com o Banco "
+											.alert("Erro ao Tentar Listar os computadores Verifique Sua Conexão com o Banco "
 													+ data);
 
 								});
@@ -61,6 +61,8 @@ ComputadorControllerApp
 					
 					
 					$scope.listaSetor = function() {
+						
+						
 
 						$scope.setores = new Array();
 
