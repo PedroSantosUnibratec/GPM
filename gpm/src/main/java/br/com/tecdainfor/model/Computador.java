@@ -14,9 +14,11 @@ import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name= "TB_COMPUTADOR")
-public class Computador implements Serializable {
+public class Computador implements Serializable  {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,9 +43,9 @@ public class Computador implements Serializable {
 //	private Date dataCriacao;
 	
 	
-	
+	 @JsonBackReference
 	@ManyToOne(targetEntity = Setor.class)
-	 private Setor computador_setor;
+	 private Setor setor;
 	
 	//Gets and Sets da classe setor
 	
@@ -51,12 +53,15 @@ public class Computador implements Serializable {
 	public int getId() {
 		return id;
 	}
-	public Setor getComputador_setor() {
-		return computador_setor;
+
+	public Setor getSetor() {
+		return setor;
 	}
-	public void setComputador_setor(Setor computador_setor) {
-		this.computador_setor = computador_setor;
+
+	public void setSetor(Setor setor) {
+		this.setor = setor;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}

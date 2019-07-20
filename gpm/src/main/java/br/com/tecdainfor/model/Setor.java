@@ -18,6 +18,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name = "TB_Setor")
 public class Setor implements Serializable {
@@ -45,19 +47,20 @@ public class Setor implements Serializable {
 	
 	
 
-	
-	@OneToMany(mappedBy = "monitor_setor", targetEntity = Monitor.class, 
+	@JsonManagedReference
+	@OneToMany(mappedBy = "setor", targetEntity = Monitor.class, 
 	fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@Column(name = "listademonitores", nullable = false)
 	private Collection<Monitor> monitores;
 	
-	
-	@OneToMany(mappedBy = "computador_setor", targetEntity = Computador.class, 
+	@JsonManagedReference
+	@OneToMany(mappedBy = "setor", targetEntity = Computador.class, 
 	fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@Column(name = "listadecomputadores", nullable = false)
 	private Collection<Computador> computadores;
 	
-	@OneToMany(mappedBy = "impressora_setor", targetEntity = Impressora.class, 
+	@JsonManagedReference
+	@OneToMany(mappedBy = "setor", targetEntity = Impressora.class, 
 	fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@Column(name = "listadeimpressoras", nullable = false)
 	private Collection<Impressora> impressoras;

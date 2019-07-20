@@ -89,11 +89,11 @@
 						</div>
 
 
-							<div class="form-group"
-								ng-class="{ 'has-error' : userForm.modelo.$invalid && !userForm.modelo.$pristine }">
+						<div class="form-group"
+								ng-class="{ 'has-error' : userForm.setor.$invalid && !userForm.setor.$pristine }">
 								<label for="setor" class="col-sm-2 control-label">Setor*</label>
 								<div class="col-sm-2">
-										<select ng-model="setor.id" name="setor" id="setor" class="form-control"
+										<select ng-model="setor" name="setor" id="setor" class="form-control"
 										ng-options="setor.nome for setor in setores"></select>
 									
 									

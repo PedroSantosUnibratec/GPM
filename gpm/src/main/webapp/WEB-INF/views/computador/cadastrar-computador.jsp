@@ -136,7 +136,7 @@
 							</div>
 
 							<div class="form-group"
-								ng-class="{ 'has-error' : userForm.modelo.$invalid && !userForm.modelo.$pristine }">
+								ng-class="{ 'has-error' : userForm.setor.$invalid && !userForm.setor.$pristine }">
 								<label for="setor" class="col-sm-2 control-label">Setor*</label>
 								<div class="col-sm-2">
 										<select ng-model="setor" name="setor" id="setor" class="form-control"

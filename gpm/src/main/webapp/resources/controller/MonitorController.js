@@ -92,6 +92,7 @@ MonitorControllerApp
 						monitor.modelo = $scope.modelo;
 						monitor.montomb = $scope.montomb;
 						monitor.descricao = $scope.descricao;
+						monitor.setor =  $scope.setor;
 
 						var response = $http.post("cadastrar", monitor);
 
@@ -108,6 +109,7 @@ MonitorControllerApp
 										$scope.modelo = null;
 										$scope.montomb = null;
 										$scope.descricao = null;
+										$scope.setor = null;
 
 										window.location.href = "listar";
 

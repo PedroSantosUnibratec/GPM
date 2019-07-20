@@ -11,9 +11,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "TB_IMPRESSORA")
-public class Impressora implements Serializable {
+public class Impressora  implements Serializable {
 	
 	// Atributos da classe Impressora
 
@@ -32,13 +34,15 @@ public class Impressora implements Serializable {
 	@Column(name = "st_modelo")
 	private String modelo;
 	
-	
+	 @JsonBackReference
 	@ManyToOne(targetEntity = Setor.class)
-	 private Setor impressora_setor;
+	 private Setor setor;
 	
 	
 	
 	// Geters e Seters da classe Impressora
+	
+	
 	
 	 
 	
@@ -46,13 +50,16 @@ public class Impressora implements Serializable {
 		return id;
 	}
 
-	public Setor getImpressora_setor() {
-		return impressora_setor;
+	
+	public Setor getSetor() {
+		return setor;
 	}
 
-	public void setImpressora_setor(Setor impressora_setor) {
-		this.impressora_setor = impressora_setor;
+
+	public void setSetor(Setor setor) {
+		this.setor = setor;
 	}
+
 
 	public void setId(int id) {
 		this.id = id;

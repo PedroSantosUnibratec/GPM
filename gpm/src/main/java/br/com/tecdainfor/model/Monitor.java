@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 // Classe Monitor
 
 @Entity
@@ -31,27 +33,35 @@ public class Monitor implements Serializable {
 	private String descricao;
 	
 	
-	
+	 @JsonBackReference
 	@ManyToOne(targetEntity = Setor.class)
-	 private Setor monitor_setor;
+	 private Setor setor;
 	
 	
 	
 	//Gets and Sets da classe monitor
 	
 	 
+	
+	
 	 
 	public int getId() {
 		return id;
 	}
 	
-	public Setor getMonitor_setor() {
-		return monitor_setor;
+
+
+	public Setor getSetor() {
+		return setor;
 	}
 
-	public void setMonitor_setor(Setor monitor_setor) {
-		this.monitor_setor = monitor_setor;
+
+
+	public void setSetor(Setor setor) {
+		this.setor = setor;
 	}
+
+
 
 	public void setId(int id) {
 		this.id = id;

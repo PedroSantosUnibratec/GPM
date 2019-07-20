@@ -52,7 +52,7 @@ public class ComputadorController {
 	
 	@RequestMapping(value = "/lista", method= RequestMethod.GET)
 	public @ResponseBody List<Computador> ConsultarTodos(){
-		return 	this.computadordao.listarComputadores();
+				return 	this.computadordao.listarComputadores();
 	}
 	
 	@RequestMapping(value = "/listasetor", method= RequestMethod.GET)
