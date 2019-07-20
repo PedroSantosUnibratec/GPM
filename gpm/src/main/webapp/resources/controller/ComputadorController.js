@@ -23,13 +23,16 @@ ComputadorControllerApp
 
 						if (setor == null) {
 
-							$scope.listar();
+  					    	$scope.listar();
+							$scope.listaSetor();
 
 						} else {
 
 							$scope.buscar();
 
 						}
+						
+					  
 
 					}
 
@@ -55,6 +58,31 @@ ComputadorControllerApp
 
 								});
 					}
+					
+					
+					$scope.listaSetor = function() {
+
+						$scope.setores = new Array();
+
+						var response = $http.get("listasetor");
+
+						response
+								.success(function(data, status, headers, config) {
+
+									$scope.setores = data;
+
+								});
+
+						response
+								.error(function(data, status, headers, config) {
+
+									$window
+											.alert("Erro ao Tentar Listar os Setores Verifique Sua Conexão com o Banco "
+													+ data);
+
+								});
+					}
+					
 
 					$scope.submitForm = function(isValid) {
 

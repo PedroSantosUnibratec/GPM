@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.tecdainfor.dao.ComputadorDAO;
 import br.com.tecdainfor.model.Computador;
+import br.com.tecdainfor.model.Setor;
 import br.com.tecdainfor.model.Usuario;
 
 @Controller
@@ -54,6 +55,11 @@ public class ComputadorController {
 		return 	this.computadordao.listarComputadores();
 	}
 	
+	@RequestMapping(value = "/listasetor", method= RequestMethod.GET)
+	public @ResponseBody List<Setor> ListaSetor(){
+		return 	this.computadordao.listaSetor();
+	}
+	
 	@RequestMapping(value = "/cadastrar", method = RequestMethod.POST)
 	public @ResponseBody Computador salvar(@RequestBody Computador computador) {
 		return this.computadordao.cadastrarComputador(computador);				
@@ -68,6 +74,8 @@ public class ComputadorController {
 	public @ResponseBody List<Computador> listaCompSetor(@PathVariable String setor){
 		List<Computador> computador = computadordao.listaCompSetor(setor);
 		return computador;
+		
+
 	}
 	@RequestMapping (value = "/excluir/{id}", method = RequestMethod.POST)
 	public @ResponseBody Computador excluir(@PathVariable int id){

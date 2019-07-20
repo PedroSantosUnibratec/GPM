@@ -9,6 +9,7 @@ import javax.persistence.PersistenceContextType;
 import org.springframework.stereotype.Repository;
 
 import br.com.tecdainfor.model.Computador;
+import br.com.tecdainfor.model.Setor;
 
 @Repository
 public class ComputadorDAOImpl implements ComputadorDAO{
@@ -41,12 +42,20 @@ public class ComputadorDAOImpl implements ComputadorDAO{
 	
 	
 	@Override
-	@SuppressWarnings("unchecked")
 	@javax.transaction.Transactional
 	public List<Computador> listaCompSetor(String setor){
 		List<Computador> computador =  manager.createQuery(" SELECT u FROM Computador u WHERE u.setor LIKE '" + setor + "%'").getResultList();		
 		return computador;
 	}
+	
+
+	@Override
+	@javax.transaction.Transactional
+	public List<Setor> listaSetor() {
+		return manager.createQuery("SELECT u FROM Setor u ORDER BY u.nome", Setor.class).getResultList();
+	}
+
+	
 	
 	@Override
 	@javax.transaction.Transactional
@@ -62,7 +71,7 @@ public class ComputadorDAOImpl implements ComputadorDAO{
 	@Override
 	@javax.transaction.Transactional
 	public List<Computador> listarComputadores(){
-		return manager.createQuery("SELECT u FROM Computador u ORDER BY u.setor", Computador.class).getResultList();
+		return manager.createQuery("SELECT u FROM Computador u ORDER BY u.nome", Computador.class).getResultList();
 	}
 	
 	

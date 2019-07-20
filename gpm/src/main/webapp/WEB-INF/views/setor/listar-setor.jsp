@@ -29,18 +29,18 @@
 			   </div>
 			   <div id="navbar" class="navbar-collapse collapse">
 				    <ul class="nav navbar-nav navbar-right">
-					      <li><a href="../painel">Início</a></li>
-						  <li><a href="../usuario/listar">Usuário</a></li>
-						  <li><a href="../listar">Computador</a></li>
-						  <li><a href="../monitor/listar">Monitor</a></li>
-						  <li><a href="../impressora/listar">Impressora</a></li>
+					      <li><a href="/gpm/painel">Início</a></li>
+						  <li><a href="vusuario/listar">Usuário</a></li>
+						  <li><a href="/gpm/listar">Computador</a></li>
+						  <li><a href="/gpm/monitor/listar">Monitor</a></li>
+						  <li><a href="/gpm/impressora/listar">Impressora</a></li>
 						    <li><a href="/gpm/setor/listar">Setor</a></li>
 				    </ul>
 			   </div>
 		  </div>
 	 </nav>
 	
-	 <div id="main" class="container-fluid" style="margin-top: 50px" ng-controller="SetorController">
+	 <div id="main" class="container-fluid" style="margin-top: 50px" ng-controller="SetorController" data-ng-init="init()">
 	 
 	 	<div id="top" class="row">
 			<div class="col-sm-3">

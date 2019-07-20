@@ -15,22 +15,11 @@ SetorControllerApp
 
 					$scope.init = function() {
 
-						$scope.setores = new Array();
 						
-						var response = $http.get("lista");
-						
-						response.success(function(data, status, headers, config){
 							
-							$scope.setores = data;
-							
-						})
-						
-						response.error(function(data, status, headers, config){
-							
-							$window.alert("Erro ao Tentar Listar. Verifique Sua Conexão com o Banco " + data);
-							
-						});	
+							$scope.listar();
 					}
+					
 					/* Listar Setor */
 					$scope.listar = function() {
 

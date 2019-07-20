@@ -3,6 +3,7 @@ package br.com.tecdainfor.dao;
 import java.util.List;
 
 import br.com.tecdainfor.model.Computador;
+import br.com.tecdainfor.model.Setor;
 
 public interface ComputadorDAO {
 
@@ -17,5 +18,7 @@ public interface ComputadorDAO {
 	Computador excluir(int id);
 
 	List<Computador> listarComputadores();
+
+	List<Setor> listaSetor();
 
 }

@@ -29,11 +29,11 @@
 			   </div>
 			   <div id="navbar" class="navbar-collapse collapse">
 				    <ul class="nav navbar-nav navbar-right">
-					      <li><a href="../painel">Início</a></li>
-						  <li><a href="../usuario/listar">Usuário</a></li>
-						   <li><a href="/gpm/computador/listar">Computador</a></li>
-						  <li><a href="../monitor/listar">Monitor</a></li>
-						  <li><a href="../impressora/listar">Impressora</a></li>
+					        <li><a href="/gpm/painel">Início</a></li>
+						  <li><a href="vusuario/listar">Usuário</a></li>
+						  <li><a href="/gpm/listar">Computador</a></li>
+						  <li><a href="/gpm/monitor/listar">Monitor</a></li>
+						  <li><a href="/gpm/impressora/listar">Impressora</a></li>
 						    <li><a href="/gpm/setor/listar">Setor</a></li>
 				    </ul>
 			   </div>
@@ -86,7 +86,7 @@
 						<td>{{computador.modelo}}</td>
 						<td>{{computador.nome}}</td>
 						<td>{{computador.ramal}}</td>
-						<td>{{computador.setor}}</td>
+						<td>{{computador.setor.nome}}</td>
 						<td>{{computador.ip}}</td>
 						<td class="actions">
 							<a class="btn btn-success btn-xs" href="visualizar" ng-href="visualizar/{{computador.id}}">Visualizar</a>
